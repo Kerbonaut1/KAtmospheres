@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c1rd7xsbc7nts"]
+
+[ext_resource type="PackedScene" uid="uid://c3apr0amc3qbo" path="res://addons/kerbonautatmosphere/Atmosphere/Atmosphere.tscn" id="1_6u8x1"]
+
+[sub_resource type="Environment" id="Environment_cfr2y"]
+background_mode = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_jamrl"]
+
+[node name="Demo" type="Node3D" unique_id=884025639]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=863662183]
+environment = SubResource("Environment_cfr2y")
+
+[node name="Atmosphere" parent="." unique_id=1908325243 instance=ExtResource("1_6u8x1")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=914676127]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1768352464]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)
+mesh = SubResource("SphereMesh_jamrl")

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c3apr0amc3qbo"]
+
+[ext_resource type="Shader" uid="uid://fl6npjwn6lpl" path="res://addons/kerbonautatmosphere/Atmosphere/AtmosphereShader.gdshader" id="1_ap47s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l5our"]
+flip_faces = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l5our"]
+render_priority = 0
+shader = ExtResource("1_ap47s")
+shader_parameter/planet_radius = 100.0
+shader_parameter/atmosphere_radius = 160.0
+shader_parameter/rayleigh_coefficients = Vector3(0.0058, 0.0135, 0.0331)
+shader_parameter/rayleigh_scale_height = 8.0
+shader_parameter/mie_coefficient = 0.021
+shader_parameter/mie_scale_height = 1.2
+shader_parameter/mie_g = 0.76
+shader_parameter/sun_intensity = 10.0
+shader_parameter/multi_scatter_strength = 0.4
+shader_parameter/multi_scatter_octaves = 4
+shader_parameter/multi_scatter_falloff = 0.5
+shader_parameter/view_steps = 16
+shader_parameter/light_steps = 8
+
+[node name="Atmosphere" type="MeshInstance3D" unique_id=1908325243]
+transform = Transform3D(260.2209527198115, 0, 0, 0, 260.2209527198115, 0, 0, 0, 260.2209527198115, 0, 0, 0)
+mesh = SubResource("BoxMesh_l5our")
+surface_material_override/0 = SubResource("ShaderMaterial_l5our")
