@@ -25,4 +25,5 @@ None lol put as many as u want in a level
 - int view_steps : hint_range(4, 64) = 16;
 - int light_steps : hint_range(2, 32) = 8;
 
-
+## Discalimer
+AI was used when making the shader sorry
